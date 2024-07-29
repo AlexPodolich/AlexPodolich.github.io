@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Podolich Oleksandr - Personal Portfolio Website</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/65040b2502.js" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    </head>
+    <body>
+        <div id="header">
+            <div class="container">
+                <nav>
+                    <img src="images/logo.png" class="logo">
+                    <ul id="sidemenu">
+                        <li><a href="#header">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#curr-projects">Current Projects</a></li>
+                        <li><a href="#hobby">Hobbies</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <i class="phone-nav fa-solid fa-xmark" onclick="closemenu()"></i>
+                    </ul>
+                    <i class="phone-nav fa-solid fa-bars" onclick="openmenu()"></i>
+                </nav>
+                <div class="header-text">
+                    <!-- <p>Software Engineer</p> -->
+                    <h1>Hello, I'm <br> <span>Oleksandr Podolich</span><br> I am a <span class="typedText"></span> <br>Based in Warsaw</h1>
+                </div>
+            </div>
+        </div>
+        <!-- -------------- About Me -------------------- -->
+        <div id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="about-col-1">
+                        <img src="images/user.jpg">
+                    </div>
+                    <div class="about-col-2">
+                        <h1 class="sub-title"> About Me </h1>
+                        <p>I am a Master's student specializing in software engineering, business
+                           processes, and databases. I believe that teamwork, dedication, and a
+                           positive attitude are key to success in any field. I perform well in high-pressure situations and have multitasking skills. Always open to new experiences and ready to overcome challenges.</p>
+
+                           <div class="tab-titles">
+                                <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                                <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                                <p class="tab-links" onclick="opentab('education')">Education</p>
+                           </div>
+                           <div class="tab-contents active-tab" id="skills">
+                                <ul>
+                                    <li><span>Game Development (Unity)</span><br>Programming, implementing mechanics, optimizing performance</li>
+                                    <li><span>Java Development</span><br>Java Back-End Development with Spring Boot, Thymeleaf, Hibernate</li>
+                                    <li><span>Python Development</span><br>Programming with TensorFlow, Keras, NumPy</li>
+                                    <li><span>Web Development</span><br>HTML, CSS, JavaScript (Node.js, React)</li>
+                                    <li><span>Database Management</span><br>SQL (PL/SQL, MySQL, MSSQL)</li>
+                                    <li><span>Other Technologies</span><br>C# (.NET, Entity Framework, REST API), Linux (Bash), Git</li>
+                                </ul>
+                           </div>
+                           <div class="tab-contents" id="experience">
+                                <ul>
+                                    <li><span>2023-Current</span><br>Game Tester at Lionbridge</li>
+                                    <li><span>2022</span><br>IT Consultant at Comfy</li>
+                                </ul>
+                           </div>
+                           <div class="tab-contents" id="education">
+                                <ul>
+                                    <li><span>2024-Present</span><br>Master of Engineering, Computer Science, Polish-Japanese Academy of Information Technology</li>
+                                    <li><span>2020-2024</span><br>Bachelor of Engineering, Computer Science, Polish-Japanese Academy of Information Technology</li>
+                                    <li><span>2017-2020</span><br>Software Development Course, IT STEP Academy</li>
+                                </ul>
+                           </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ------------------------services------------------------ -->
+        <div id="services">
+            <div class="container">
+                <h1 class="sub-title"> My Services </h1>
+                <div class="services-list">
+                    <div>
+                        <i class="fa-brands fa-unity"></i>
+                        <h2>Game Development</h2>
+                        <p>Programming, implementing mechanics, optimizing performance</p>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-code"></i>
+                        <h2>Java Development</h2>
+                        <p>Back-End Development with Spring Boot, Thymeleaf, Hibernate</p>
+                    </div>
+                    <div>
+                        <i class="fa-brands fa-python"></i>
+                        <h2>Python Development</h2>
+                        <p>Programming with TensorFlow, Keras, NumPy</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- -----------------portfolio------------------ -->
+        <div id="portfolio">
+            <div class="container">
+                <h1 class="sub-title"> My Work </h1>
+                <div class="work-list">
+                    <!-- Initially visible works -->
+                    <div class="work">
+                        <img src="images/work1.png" alt="">
+                        <div class="layer">
+                            <h2>Website for the Dormitory</h3>
+                            <p>Developed a web application with a Java backend (Spring Boot) and HTML/CSS frontend. Conducted unit testing and wrote Software Requirement Specification with UML diagrams.</p>
+                            <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                    <div class="work">
+                        <img src="images/work2.png" alt="">
+                        <div class="layer">
+                            <h2>Social Media App</h3>
+                            <p>Created websites using Node.js and React. Implemented functionalities for editing, removing, and adding data. Developed a MySQL database with validation checks.</p>
+                            <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                    <div class="work">
+                        <img src="images/work3.png" alt="">
+                        <div class="layer">
+                            <h2>The Star Wanderer (3D FPS game)</h3>
+                            <p>Developed a Unity-based game using C#. Designed levels, implemented logic, and tested the game. Fixed bugs and created organized reports.</p>
+                            <a href="https://youtu.be/LERyar9b5HA?si=nS3-u2tUflEetjQc"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="work-list hidden">
+                    <!-- Additional works -->
+                    <div class="work">
+                        <img src="images/work4.png" alt="">
+                        <div class="layer">
+                            <h2>Android App for Diet Tracking</h3>
+                            <p>Developed Android app for diet tracking and management. Implemented user registration and login functionalities. Integrated database for storing meals and products. Designed intuitive user interface using Android Studio.</p>
+                            <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                    <div class="work">
+                    </div>
+                    <div class="work">
+                    </div>
+                </div>
+                <a class="btn" id="toggle-works">See more</a>
+            </div>
+        </div>        
+        <!-- ------------------------------current projects------------------------------ -->
+        <div id="curr-projects">
+            <div class="container">
+                <h1 class="sub-title"> My Current projects </h1>
+                <div class="project-list">
+                    <div class="project">
+                        <div class="frontside">
+                            <img src="images/project1.png" alt="">
+                        </div>
+                        <div class="backside">
+                            <img class="background-img" src="images/project1.png" alt="">
+                            <div class="overlay"></div>
+                            <h2>Cleaning Game in Unity</h3>
+                            <p>Developing a first-person cleaning simulator game in a team of 5. Utilizing ClickUp for project management, Unity for game development, and GitHub for version control. Enhancing teamwork skills throughout the project.</p>
+                        </div>
+                    </div>
+                    <div class="project">
+                    </div>
+                    <div class="project">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- --------------------------------hobby---------------------------   -->
+        <div id="hobby">
+            <div class="container">
+                <h1 class="sub-title"> My Hobbies </h1>
+                <div class="hobbies-container">
+                    <div class="hobby">
+                        <h2>Gym workout</h2>
+                        <p>My main hobby is going to the gym 3-4 times a week. It helps me maintain good health, relax, and recharge, allowing me to tackle projects and daily routines with renewed energy.</p>
+                    </div>
+                    <div class="hobby">
+                        <h2>E-sports</h2>
+                        <p>I used to play CS:GO competitively, participating in various tournaments and even being part of our university team, Ninja Pjatk. Although I no longer play, I still enjoy watching world championships.</p>
+                    </div>
+                </div>
+                <div class="banner">
+                    <div class="slider" style="--quantity: 8">
+                        <div class="item" style="--position: 1"><img src="images/hobby/1.jpg" alt=""></div>
+                        <div class="item" style="--position: 2"><img src="images/hobby/2.jpg" alt=""></div>
+                        <div class="item" style="--position: 3"><img src="images/hobby/3.jpg" alt=""></div>
+                        <div class="item" style="--position: 4"><img src="images/hobby/4.jpg" alt=""></div>
+                        <div class="item" style="--position: 5"><img src="images/hobby/5.jpg" alt=""></div>
+                        <div class="item" style="--position: 6"><img src="images/hobby/6.jpg" alt=""></div>
+                        <div class="item" style="--position: 7"><img src="images/hobby/7.jpg" alt=""></div>
+                        <div class="item" style="--position: 8"><img src="images/hobby/8.jpg" alt=""></div>
+                    </div>
+                    <div class="content">
+                        <div class="main-img"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ----------------contact------------------ -->
+        <div id="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="contact-left">
+                        <h1 class="sub-title">Contact Me</h1>
+                        <p> <i class="fa-solid fa-paper-plane"></i> adpodol@gmail.com</p>
+                        <p> <i class="fa-solid fa-phone"></i> +48730564606</p>
+                        <div class="social-icons">
+                            <a href="https://www.facebook.com/alex.podolich/"><i class="fa-brands fa-facebook"></i></a>
+                            <a href="https://www.linkedin.com/in/oleksandr-podolich-893b33214/"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="https://github.com/AlexPodolich"><i class="fa-brands fa-github"></i></a>
+                            <a href="https://www.youtube.com/channel/UCg4WKpSxS1bBHreUU0YgHTA"><i class="fa-brands fa-youtube"></i></a>
+                            <a href="https://t.me/Alex_Podolich"><i class="fa-brands fa-telegram"></i></a>
+                        </div>
+                        <a href="files/Podolich-Oleksandr-CV.pdf" download class="btn btn2">Download CV</a>
+                    </div>
+                    <div class="contact-right">
+                        <form name="submit-to-google-sheet">
+                            <input type="text" name="Name" placeholder="Your Name" required>
+                            <input type="email" name="Email" placeholder="Your Email" required>
+                            <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                            <button type="submit" class="btn btn2">Submit</button>
+                        </form>
+                        <span id="form-msg"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="change-tab.js"></script>
+        <script src="side-menu.js"></script>
+        <script src="contact-me.js"></script>
+        <script src="portfolio-see-more.js"></script>
+        <script src="type-effect.js"></script>
+    </body>
+</html>
