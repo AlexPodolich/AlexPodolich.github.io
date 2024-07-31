@@ -120,7 +120,7 @@ nav ul li a:hover::after{
 
 .tab-titles{
     display: flex;
-    margin: 20px 0 40px;
+    margin: 20px 0 30px;
 }
 
 .tab-links{
@@ -172,7 +172,7 @@ nav ul li a:hover::after{
 
 .services-list{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     grid-gap: 40px;
     margin-top: 50px;
 }
@@ -180,7 +180,7 @@ nav ul li a:hover::after{
 .services-list div{
     background: #262626;
     padding: 40px;
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 300;
     border-radius: 10px;
     transition: background 0.5s, transform 0.5s;
@@ -192,8 +192,8 @@ nav ul li a:hover::after{
 }
 
 .services-list div h2{
-    font-size: 30px;
-    font-weight: 500;
+    font-size: 32px;
+    font-weight: 800;
     margin-bottom: 15px;
 }
 
@@ -213,40 +213,37 @@ nav ul li a:hover::after{
 
 /* -------------portfolio-------------------- */
 
-#portfolio{
-    padding-top: 50px;
-}
-
 .work-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     grid-gap: 40px;
     margin-top: 50px;
     transition: opacity 0.5s ease, max-height 0.5s ease;
     overflow: hidden;
 }
 
-.work-list.visible {
-    opacity: 1;
-    max-height: 1000px;
-}
-
-.work-list.hidden {
-    opacity: 0;
-    max-height: 0;
-}
-
 .work{
     border-radius: 10px;
     position: relative;
     overflow: hidden;
+    transition: transform 0.5s, opacity 0.5s ease, max-height 0.5s ease;
+}
+
+.work.hidden{
+    opacity: 0;
+    max-height: 0px;
+}
+
+.work.visible{
+    opacity: 1;
+    max-height: 1000px
 }
 
 .work img{
     width: 100%;
     border-radius: 10px;
     display: block;
-    transition: transform 0.5s;
+    transition: transform 0.5s, opacity 0.5s ease, max-height 0.5s ease;
 }
 
 .layer{
@@ -262,14 +259,14 @@ nav ul li a:hover::after{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 0 40px;
+    padding: 0 35px;
     text-align: center;
     font-size: 14px;
     transition: height 0.5s;
 }
 
 .layer h2{
-    font-weight: 500;
+    font-weight: 800;
     margin-bottom: 20px;
 }
 
@@ -295,6 +292,7 @@ nav ul li a:hover::after{
 }
 
 .btn{
+    cursor: pointer;
     display: block;
     margin: 50px auto;
     width: fit-content;
@@ -303,7 +301,8 @@ nav ul li a:hover::after{
     border-radius: 6px;
     text-decoration: none;
     color: white;
-    transition: background 0.5s;
+    transition: opacity 0.5s ease, max-height 0.5s ease, background 0.5s ease;
+    max-height: 50px; /* Adjust to the appropriate height */
 }
 
 .btn:hover{
@@ -311,13 +310,9 @@ nav ul li a:hover::after{
 }
 
 /* --------------------Current Projects------------------------ */
-#curr-projects{
-    padding-bottom: 50px;
-}
-
 .project-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     grid-gap: 40px;
     margin-top: 50px;
     overflow: hidden;
@@ -371,7 +366,7 @@ nav ul li a:hover::after{
 }
 
 .backside h2{
-    font-weight: 500;
+    font-weight: 800;
     margin-bottom: 20px;
 }
 
@@ -403,6 +398,7 @@ nav ul li a:hover::after{
     font-size: 14px;
     z-index: -1;
     border-radius: 10px;
+    padding: 0 30px
 }
 
 .project:hover .frontside {
@@ -559,6 +555,11 @@ form .btn2{
     cursor: pointer;
 }
 
+form .btn2:disabled{
+    background-color: #CCCCCC;
+    cursor: not-allowed;
+}
+
 #form-msg{
     color: #61b752;
     margin-top: -40px;
@@ -569,19 +570,279 @@ form .btn2{
 nav .phone-nav{
     display: none;
 }
-@media only screen and (max-width: 600px){
-    #header{
-        background-image: url(images/phone-background.png);
+@media only screen and (max-width: 1650px){
+    .work-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     }
 
-    .header-text{
-        margin-top: 100%;
+    .layer h2{
+        margin-bottom: 15px;
+        font-size: 18px;
+    }
+
+    .layer p{
+        font-size: 13px;
+    }
+    
+    .layer a{
+        font-size: 15px;
+        line-height: 40px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .layer{
+        padding: 0 30px;
+    }
+
+    .overlay h2{
+        margin-bottom: 15px;
+        font-size: 18px;
+    }
+
+    .overlay p{
+        font-size: 13px;
+    }
+    .overlay{
+        padding: 0 30px;
+    }
+    .services-list div{
+        padding: 35px;
+        font-size: 14px;
+    }
+    
+    .services-list div i{
+        font-size: 40px;
+        margin-bottom: 15px;
+    }
+    
+    .services-list div h2{
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+}
+
+@media only screen and (max-width: 1429px){
+    #header{
+        background-image: url(/website/images/background-1430px.png);
+    }
+    .layer h2{
+        margin-bottom: 20px;
+        font-size: 24px;
+    }
+
+    .layer p{
         font-size: 16px;
     }
+    
+    .layer a{
+        font-size: 18px;
+        line-height: 60px;
+        width: 60px;
+        height: 60px;
+    }
+    .layer{
+        padding: 0 40px;
+    }
 
-    .header-text h1{
+    #curr-projects{
+        margin-top: 30px;
+    }
+
+    .overlay h2{
+        margin-bottom: 30px;
+        font-size: 28px;
+    }
+
+    .overlay p{
+        font-size: 18px;
+    }
+    .overlay {
+        padding: 0 40px;
+    }
+
+    .services-list div{
+        padding: 35px;
+        font-size: 16px;
+    }
+    .services-list div h2{
+        font-size: 32px;
+        margin-bottom: 15px;
+    }
+    #portfolio .container .btn{
+        
+        opacity: 0;
+        max-height: 0px;
+        pointer-events: none;
+    }
+    .work:not(.visible) {
+        opacity: 1;
+        max-height: 1000px
+    }
+}
+
+@media only screen and (max-width: 1225px){
+    .header-text h1 {
+        font-size: 38px;
+    }
+    .layer h2{
+        margin-bottom: 15px;
+        font-size: 20px;
+    }
+
+    .layer p{
+        font-size: 14px;
+    }
+    
+    .layer a{
+        font-size: 15px;
+        line-height: 40px;
+        width: 40px;
+        height: 40px;
+    }
+    .layer{
+        padding: 0 30px;
+    }
+
+    .overlay h2{
+        margin-bottom: 30px;
+        font-size: 22px;
+    }
+
+    .overlay p{
+        font-size: 15px;
+    }
+    .overlay {
+        padding: 0 40px;
+    }
+}
+
+@media only screen and (max-width: 1035px){
+    #header{
+        background-image: url(/website/images/background-1035px.png);
+    }
+    .header-text h1 {
+        font-size: 35px;
+    }
+    .about-col-1{
+        flex-basis: 50%;
+    }
+    .about-col-2{
+        flex-basis: 100%;
+    }
+    .about-col-1{
+        margin-bottom: 30px;
+    }
+
+    .about-col-2{
+        font-size: 16px;
+    }
+    .layer h2{
+        margin-bottom: 15px;
+        font-size: 18px;
+    }
+
+    .layer p{
+        font-size: 12px;
+    }
+    
+    .layer a{
+        font-size: 12px;
+        line-height: 35px;
+        width: 35px;
+        height: 35px;
+    }
+    .layer{
+        padding: 0 25px;
+    }
+    .overlay h2{
+        margin-bottom: 20px;
+        font-size: 20px;
+    }
+
+    .overlay p{
+        font-size: 13px;
+    }
+    .overlay {
+        padding: 0 30px;
+    }
+}
+
+@media only screen and (max-width: 941px){
+    .header-text h1 {
+        font-size: 32px;
+    }
+    .about-col-1{
+        flex-basis: 60%;
+    }
+    .layer h2{
+        margin-bottom: 25px;
+        font-size: 28px;
+    }
+
+    .layer p{
+        font-size: 18px;
+    }
+    
+    .layer a{
+        font-size: 18px;
+        line-height: 60px;
+        width: 60px;
+        height: 60px;
+    }
+    .layer{
+        padding: 0 40px;
+    }
+
+    .overlay h2{
+        margin-bottom: 30px;
         font-size: 30px;
     }
+
+    .overlay p{
+        font-size: 18px;
+    }
+    .overlay{
+        padding: 0 50px;
+    }
+}
+
+@media only screen and (max-width: 680px){
+    .layer h2{
+        margin-bottom: 15px;
+        font-size: 20px;
+    }
+    .about-col-1{
+        flex-basis: 75%;
+    }
+    .layer p{
+        font-size: 15px;
+    }
+    
+    .layer a{
+        font-size: 14px;
+        line-height: 45px;
+        width: 45px;
+        height: 45px;
+    }
+    .layer{
+        padding: 0 30px;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    #header{
+        background-image: url(/website/images/phone-background.png);
+    }
+    
+    .header-text h1 {
+        font-size: 23px;
+    }
+    .header-text{
+        margin-top: 25%;
+    }
+
     nav .phone-nav{
         display: block;
         font-size: 25px;
@@ -594,7 +855,7 @@ nav .phone-nav{
         width: 200px;
         height: 100vh;
         padding-top: 50px;
-        z-index: 2;
+        z-index: 3;
         transition: right 0.5s;
     }
     nav ul li{
@@ -621,15 +882,97 @@ nav .phone-nav{
     }
 
     .about-col-2{
-        font-size: 14px;
+        font-size: 16px;
     }
 
     .tab-links{
-        font-size: 16px;
+        font-weight: 800;
+        font-size: 18px;
         margin-right: 20px;
+    }
+
+    .tab-contents ul li span {
+        font-weight: 800;
+        font-size: 18px;
     }
 
     .contact-left, .contact-right{
         flex-basis: 100%;
+    }
+
+    .services-list {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .work-list {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .project-list {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .layer h2{
+        margin-bottom: 15px;
+        font-size: 17px;
+    }
+
+    .layer p{
+        font-size: 11px;
+    }
+    
+    .layer a{
+        font-size: 11px;
+        line-height: 30px;
+        width: 30px;
+        height: 30px;
+    }
+    .layer{
+        padding: 0 16px;
+    }
+    .overlay h2{
+        margin-bottom: 20px;
+        font-size: 20px;
+    }
+
+    .overlay p{
+        font-size: 12px;
+    }
+    .overlay {
+        padding: 0 30px;
+    }
+    .hobbies-container {
+        display: grid;
+        margin-top: 20px;
+    }
+
+    .hobby {
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+    }
+    @keyframes autoRun{
+        from{
+            transform: perspective(1000px) rotateX(-22deg) rotateY(0deg);
+        }to{
+            transform: perspective(1000px) rotateX(-22deg) rotateY(360deg);
+        }
+    }
+    .banner {
+        height: 60vh;
+        margin-top: 0;
+    }
+    .banner .slider {
+        width: 150px;
+        height: 90px;
+        top: 25%;
+        left: calc(50% - 75px);
+    }
+    .banner .slider .item {
+        transform: rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)) translateZ(255px);
+    }
+    .banner .content .main-img {
+        height: 45vh;
+        background-size: auto 100%;
     }
 }

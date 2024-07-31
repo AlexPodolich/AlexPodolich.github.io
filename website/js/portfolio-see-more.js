@@ -1,15 +1,21 @@
 document.addEventListener('DOMContentLoaded', function() {
     const button = document.getElementById('toggle-works');
-    const hiddenWorks = document.querySelector('.work-list.hidden');
+    const hiddenWorks = document.querySelectorAll('.work.hidden');
     
     function toggleWorks() {
-        if (hiddenWorks.classList.contains('hidden')) {
-            hiddenWorks.classList.remove('hidden');
-            hiddenWorks.classList.add('visible');
+        hiddenWorks.forEach(function(work) {
+            if (work.classList.contains('hidden')) {
+                work.classList.remove('hidden');
+                work.classList.add('visible');
+            } else {
+                work.classList.remove('visible');
+                work.classList.add('hidden');
+            }
+        });
+
+        if (button.textContent === 'See more') {
             button.textContent = 'Hide';
         } else {
-            hiddenWorks.classList.remove('visible');
-            hiddenWorks.classList.add('hidden');
             button.textContent = 'See more';
         }
     }
