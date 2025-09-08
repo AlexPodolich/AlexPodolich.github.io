@@ -670,16 +670,7 @@ nav .phone-nav{
         font-size: 32px;
         margin-bottom: 15px;
     }
-    #portfolio .container .btn{
-        
-        opacity: 0;
-        max-height: 0px;
-        pointer-events: none;
-    }
-    .work:not(.visible) {
-        opacity: 1;
-        max-height: 1000px
-    }
+
 }
 
 @media only screen and (max-width: 1225px){
@@ -766,6 +757,16 @@ nav .phone-nav{
     }
     .overlay {
         padding: 0 30px;
+    }
+
+    #portfolio .container .btn{
+        opacity: 0;
+        max-height: 0px;
+        pointer-events: none;
+    }
+    .work:not(.visible) {
+        opacity: 1;
+        max-height: 1000px
     }
 }
 
