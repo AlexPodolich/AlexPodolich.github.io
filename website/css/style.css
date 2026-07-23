@@ -115,15 +115,11 @@ strong{ color:#fff; font-weight:600; }
     display:flex;
     align-items:center;
     justify-content:space-between;
-    padding:22px 0;
     position:fixed;
     top:0; left:0; right:0;
     z-index:50;
-    max-width:var(--maxw);
-    margin:0 auto;
-    padding-left:clamp(20px, 5vw, 64px);
-    padding-right:clamp(20px, 5vw, 64px);
-    transition:padding .3s ease;
+    padding:22px clamp(24px, 6vw, 96px);
+    transition:padding .3s ease, background .3s ease;
 }
 /* scrolled state (added via JS on body) */
 body.scrolled #navbar{
@@ -132,9 +128,6 @@ body.scrolled #navbar{
     -webkit-backdrop-filter:blur(14px);
     border-bottom:1px solid var(--border);
     padding-top:14px; padding-bottom:14px;
-    left:0; right:0; max-width:100%;
-    padding-left:max(clamp(20px,5vw,64px), calc((100vw - var(--maxw))/2 + 20px));
-    padding-right:max(clamp(20px,5vw,64px), calc((100vw - var(--maxw))/2 + 20px));
 }
 
 .wordmark{
@@ -173,6 +166,13 @@ body.scrolled #navbar{
     background-size:cover;
     background-position:right center;
     background-repeat:no-repeat;
+}
+/* hero content hugs the left instead of sitting in centered dead space */
+#header .container{
+    max-width:none;
+    width:100%;
+    padding-left:clamp(24px, 6vw, 96px);
+    padding-right:clamp(24px, 6vw, 96px);
 }
 #header::after{  /* subtle top+bottom vignette */
     content:'';
@@ -274,6 +274,17 @@ body.scrolled #navbar{
 .tab-contents ul li span{
     color:#fff; font-family:var(--font-mono); font-size:13px;
     display:inline-block; margin-bottom:2px;
+}
+
+/* experience: date on the left, company on the right */
+.exp-head{
+    display:flex; justify-content:space-between; align-items:baseline;
+    gap:12px; margin-bottom:4px;
+}
+.exp-date{ color:#fff; font-family:var(--font-mono); font-size:13px; }
+.exp-company{
+    color:var(--accent); font-family:var(--font-mono); font-size:13px;
+    font-weight:500; text-align:right; white-space:nowrap;
 }
 .tab-contents{ display:none; }
 .tab-contents.active-tab{ display:block; animation:fadeIn .5s ease; }
