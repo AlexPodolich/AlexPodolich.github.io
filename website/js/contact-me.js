@@ -1,22 +1,35 @@
-const scriptURL = 'https://script.google.com/macros/s/AKfycbyX648it-gvhzCLNP_L1tWdbqcdFXAxJxLVWs6tLcIwiNSTiOnpb54G5MgJpqvUxAO4yg/exec'
-const form = document.forms['submit-to-google-sheet']
-const msg = document.getElementById("form-msg")
-const submitButton = form.querySelector('button[type="submit"]')
+// Contact form -> Web3Forms (emails each submission to opodolich.dev@gmail.com).
+// The sender's email is set as reply-to, so replies go straight back to them.
+const form = document.getElementById("contact-form");
+const msg = document.getElementById("form-msg");
+const submitButton = form.querySelector('button[type="submit"]');
 
-form.addEventListener('submit', e => {
-    e.preventDefault()
-    submitButton.disabled = true
-    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-        .then(response => {
-            msg.innerHTML = "Message sent successfully!"
-            setTimeout(() => {
-                msg.innerHTML = ""
-                submitButton.disabled = false
-            }, 1000)
-            form.reset()
-        })
-        .catch(error => {
-            console.error('Error!', error.message)
-            submitButton.disabled = false
-        })
-})
+form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    submitButton.disabled = true;
+    msg.style.color = "";
+    msg.textContent = "Sending…";
+
+    try {
+        const res = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            body: new FormData(form),
+        });
+        const data = await res.json();
+
+        if (data.success) {
+            msg.style.color = "#61b752";
+            msg.textContent = "Thanks! Your message has been sent.";
+            form.reset();
+        } else {
+            throw new Error(data.message || "Submission failed");
+        }
+    } catch (err) {
+        console.error("Contact form error:", err);
+        msg.style.color = "#e5534b";
+        msg.textContent = "Something went wrong — please email opodolich.dev@gmail.com directly.";
+    } finally {
+        submitButton.disabled = false;
+        setTimeout(() => { msg.textContent = ""; }, 6000);
+    }
+});
