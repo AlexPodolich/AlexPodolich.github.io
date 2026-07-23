@@ -1,0 +1,7 @@
+# Node / tooling artifacts (used only for local image optimization)
+node_modules/
+package.json
+package-lock.json
+
+# Local image backups (originals are preserved in git history)
+website/images/_originals/

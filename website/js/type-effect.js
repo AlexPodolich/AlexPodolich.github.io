@@ -1,8 +1,7 @@
 var typingEffect = new Typed(".typedText", {
-    strings: ["Developer", "Coder", "Programmer", "Software Engineer"],
-
+    strings: ["Software Engineer", "Rails Developer", "Full-Stack Coder", "Problem Solver"],
     loop: true,
-    typeSpeed: 40,
-    backSpeed: 40,
-    backDelay: 2000,
-})
+    typeSpeed: 55,
+    backSpeed: 35,
+    backDelay: 1800,
+});

@@ -1,7 +1,13 @@
 var sidemenu = document.getElementById("sidemenu");
+
 function openmenu() {
-    sidemenu.style.right = "0";
+    sidemenu.classList.add("open");
 }
 function closemenu() {
-    sidemenu.style.right = "-200px";
+    sidemenu.classList.remove("open");
 }
+
+// Close the mobile menu after tapping a nav link
+sidemenu.querySelectorAll("a").forEach(function (link) {
+    link.addEventListener("click", closemenu);
+});
